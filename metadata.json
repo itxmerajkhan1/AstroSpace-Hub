@@ -1,0 +1,6 @@
+{
+  "name": "AstroSpace Hub",
+  "description": "A futuristic web application project foundation.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

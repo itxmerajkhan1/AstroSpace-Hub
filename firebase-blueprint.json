@@ -1,0 +1,60 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "User profile schema with professional skills, social connections, and custom branding.",
+      "type": "object",
+      "properties": {
+        "uid": {
+          "type": "string",
+          "description": "Unique user ID of the profile owner matching their auth UID."
+        },
+        "username": {
+          "type": "string",
+          "description": "Cyberpunk handle/username chosen by the user."
+        },
+        "displayName": {
+          "type": "string",
+          "description": "The user's real or professional public name."
+        },
+        "bio": {
+          "type": "string",
+          "description": "Short summary or bio of the user."
+        },
+        "avatarUrl": {
+          "type": "string",
+          "description": "URL of the user's uploaded or custom avatar image."
+        },
+        "bannerUrl": {
+          "type": "string",
+          "description": "URL of the user's customizable banner image."
+        },
+        "skills": {
+          "type": "array",
+          "description": "List of specialized technical or creative skills."
+        },
+        "socials": {
+          "type": "object",
+          "description": "Handles or URLs for various networks.",
+          "properties": {
+            "github": { "type": "string" },
+            "linkedin": { "type": "string" },
+            "twitter": { "type": "string" }
+          }
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "ISO timestamp or Firestore server timestamp when the profile was last modified."
+        }
+      },
+      "required": ["uid", "username", "displayName"]
+    }
+  },
+  "firestore": {
+    "/profiles/{profileId}": {
+      "schema": "UserProfile",
+      "description": "Stores cyber-identity profiles synced by user ID."
+    }
+  }
+}
